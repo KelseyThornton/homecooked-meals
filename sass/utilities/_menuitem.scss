@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.menu-item {
+    text-decoration: none;
+    font-family: $ff-serif;
+    font-weight: fw(regular);
+    margin-inline: size(16);
+    font-size: fs(600);
+    color: clr(neutral, 200);
+
+    &:hover,
+    &:focus {
+        color: clr(primary, 500);
+    }
+}

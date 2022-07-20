@@ -20,6 +20,8 @@ $card-padding: size(32);
     .image {
 
         &-text {
+            text-align: left;
+
             padding: $text-padding;
             background-color: hsla(0, 0%, 0%, 0.6);
             color: clr(neutral, 200);
@@ -32,6 +34,8 @@ $card-padding: size(32);
             position: relative;
             width: max-content;
             margin-inline: 0;
+            padding-top: $title-padding;
+            font-weight: bold;
         }
 
         &-title::after {
@@ -49,15 +53,6 @@ $card-padding: size(32);
 
         &-description {
             font-weight: fw(light);
-        }
-    }
-
-    @include mq (medium) {
-        text-align: left;
-
-        .image-title {
-            padding-top: $title-padding;
-            font-weight: bold;
         }
     }
 

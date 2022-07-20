@@ -27,12 +27,12 @@
   <script type="module" src="/main.js"></script>
   <header>
     <nav>
-      <div class="container">
+      <div class="container" style="--container-width: var(--narrow-container)">
         <div class="logo"></div>
         <div class="menu">
-          <div class="menu-item">About</div>
-          <div class="menu-item">Meals</div>
-          <div class="menu-item">Testimonials</div>
+          <a href="#about" class="menu-item">About</a>
+          <a href="#meals" class="menu-item">Meals</a>
+          <a href="#testimonials" class="menu-item">Testimonials</a>
         </div>
       </div>
     </nav>
@@ -47,7 +47,7 @@
     </div>
   </header>
   <main>
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <img src="./assets/about.jpg" class="lifted-36">
         <div>
@@ -113,11 +113,11 @@
         </div>
       </div>
     </section>
-    <section class="meals">
+    <section class="meals" id="meals">
       <div class="container" style="--container-width: var(--wide-container)">
         <h2 class="clr-neutral-100">This is a nice big heading</h2>
-        <p class="subtitle clr-neutral-100 underline padding-block-end-80" style="--underline-colour: white">This is a
-          subtitle which
+        <p class="subhead clr-neutral-100 underline padding-block-end-80" style="--underline-colour: white">This is a
+          subhead which
           mentions some
           interesting things</p>
         <div class="even-columns">
@@ -126,8 +126,10 @@
               alt="A picture of a meal of a grilled salmon steak on a bed of mashed potatoes and spinach, topped with seasonal vegetables and surrounded by a dark jus.">
 
             <div class="image-text">
-              <div class="subhead image-title">Grilled salmon</div>
-              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+              <div class="subhead image-title">About this meal</div>
+              <p class="image-description">Grilled Salmon.<br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aliquam egestas
                 egestas
                 dignissim.</p>
             </div>
@@ -136,8 +138,10 @@
             <img src="./assets/meal-02.jpg" class="meal-image"
               alt="A picture of pieces of beef in a tortilla wrap with guacamole and fresh salad, surrounded by wedges of lime.">
             <div class="image-text">
-              <div class="subhead image-title">Beef tortilla wrap</div>
-              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+              <div class="subhead image-title">About this meal</div>
+              <p class="image-description">Beef tortillas.<br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aliquam egestas
                 egestas
                 dignissim.</p>
             </div>
@@ -146,8 +150,10 @@
             <img src="./assets/meal-03.jpg" class="meal-image"
               alt="A picture of fresh mussels being tossed in a stainless steel wok.">
             <div class="image-text">
-              <div class="subhead image-title">Fresh tossed mussels</div>
-              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+              <div class="subhead image-title">About this meal</div>
+              <p class="image-description">Tossed mussels.<br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aliquam egestas
                 egestas
                 dignissim.</p>
             </div>
@@ -155,7 +161,7 @@
         </div>
       </div>
     </section>
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
       <div class="container" style="--container-width: var(--wide-container)">
         <h2 class="clr-primary-400">What our clients are saying about us</h2>
         <div class="even-columns">

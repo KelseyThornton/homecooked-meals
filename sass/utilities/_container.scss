@@ -2,6 +2,7 @@
 
 .container {
     --wide-container: 80rem; // Optional container width for inline style
+    --narrow-container: 40rem; // Optional container width for inline style
     --container-width: 60rem;
     width: min(100% - 2rem, var(--container-width));
     margin-inline: auto;

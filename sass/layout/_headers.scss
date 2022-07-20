@@ -13,16 +13,17 @@ h2 {
     font-size: fs(800);
     font-weight: fw(regular);
     line-height: 1.2;
-    padding-block-start: size(32);
+    padding-block: size(16);
 }
 
 .subhead {
     font-family: $ff-sans;
     text-transform: uppercase;
     font-size: fs(500);
+    font-weight: fw(regular);
     line-height: 1.2;
     position: relative;
-    max-width: 720px;
+    max-width: 500px;
     margin-inline: auto;
 }
 
@@ -33,4 +34,6 @@ h2 {
     font-weight: fw(bold);
     line-height: 1.2;
     padding-block-start: size(20);
+    max-width: 500px;
+    margin-inline: auto;
 }

@@ -1,10 +1,27 @@
-$sizes: (
+$old-sizes: (
     8: 0.5rem,
     12: 0.75rem,
     16: 1rem,
     20: 1.25rem,
     32: 2rem,
     36: 2.25rem,
+    72: 4.5rem,
+    80: 5rem,
+);
+
+$sizes: (
+    8: 0.5rem,
+    12: 0.75rem,
+    16: clamp(1rem, calc(0.345vw + 0.932rem), 1.125rem),
+    // 16px --> 18px =  (320,16) --> (900,18)
+    // * was 1rem,
+    20: 1.25rem,
+    32: clamp(1.125rem, calc(2.414vw + 0.643rem), 2rem),
+    // 18px --> 32px = (320,18) --> (900,32)
+    // * was 2rem,
+    36: 2.25rem,
+    60: clamp(1.875rem, calc(5.173vw + 0.841rem), 3.75rem),
+    // 30px --> 60px = (320,30) --> (900,60)
     72: 4.5rem,
     80: 5rem,
 );

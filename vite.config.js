@@ -3,5 +3,14 @@
 
 export default {
     // config options
-    base: 'homecooked-meals/'
+    base: './'
+
+    // import { defineConfig } from 'vite';
+    // export default defineConfig({
+    //     root: 'src',
+    //     build: {
+    //         emptyOutDir: true,
+    //         outDir: '../dist',
+    //     },
+    // });
 }

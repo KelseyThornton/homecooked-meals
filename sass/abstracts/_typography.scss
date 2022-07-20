@@ -2,18 +2,18 @@ $ff-sans: "Lato", sans-serif;
 $ff-serif: "Abril Fatface", cursive;
 
 $font-sizes: (
-    900: clamp(1.6875rem, calc(6.601vw - 0.038rem), 3.75rem),
-    // 27px --> 60px
-    800: clamp(1.3125rem, calc(5.4vw - 0.037rem), 3rem),
-    // 21px --> 48px
-    700: clamp(1.125rem, calc(3.6vw + 0.226rem), 2.5rem),
-    // 18px --> 36px
-    600: clamp(1.125rem, calc(1.8vw + 0.675rem), 1.6875rem),
-    // 18px --> 27px
-    500: clamp(1rem, calc(1vw + 0.75rem), 1.3125rem),
-    // 16px --> 21px
-    400: clamp(1rem, calc(0.4vw + 0.9rem), 1.125rem),
-    // 16px --> 18px
+    900: clamp(1.875rem, calc(5.173vw + 0.841rem), 3.75rem),
+    // 30px --> 60px = (320,30) --> (900,60)
+    800: clamp(1.5rem, calc(5.4vw - 0.037rem), 3rem),
+    // 24px --> 48px = (320,24) --> (900,48)
+    700: clamp(1.125rem, calc(2.414vw + 0.643rem), 2.5rem),
+    // 18px --> 32px = (320,18) --> (900,32)
+    600: clamp(1.125rem, calc(1.552vw + 0.815rem), 1.6875rem),
+    // 18px --> 27px = (320,18) --> (900,27)
+    500: clamp(1rem, calc(0.863vw + 0.828rem), 1.3125rem),
+    // 16px --> 21px = (320,16) --> (900,21)
+    400: clamp(1rem, calc(0.345vw + 0.932rem), 1.125rem),
+    // 16px --> 18px =  (320,16) --> (900,18)
 );
 
 $fw-light: 200;
