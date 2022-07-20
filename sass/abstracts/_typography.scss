@@ -1,19 +1,29 @@
-$ff-sans: "Open Sans", sans-serif;
+$ff-sans: "Lato", sans-serif;
+$ff-serif: "Abril Fatface", cursive;
 
 $font-sizes: (
-    900: 3.75rem,
-    800: 3rem,
-    600: 1.5rem,
-    500: 1.3125rem,
-    400: 1.125rem,
+    900: clamp(1.6875rem, calc(6.601vw - 0.038rem), 3.75rem),
+    // 27px --> 60px
+    800: clamp(1.3125rem, calc(5.4vw - 0.037rem), 3rem),
+    // 21px --> 48px
+    700: clamp(1.125rem, calc(3.6vw + 0.226rem), 2.5rem),
+    // 18px --> 36px
+    600: clamp(1.125rem, calc(1.8vw + 0.675rem), 1.6875rem),
+    // 18px --> 27px
+    500: clamp(1rem, calc(1vw + 0.75rem), 1.3125rem),
+    // 16px --> 21px
+    400: clamp(1rem, calc(0.4vw + 0.9rem), 1.125rem),
+    // 16px --> 18px
 );
 
+$fw-light: 200;
 $fw-regular: 400;
 $fw-bold: 700;
-$fw-black: 900;
+$fw-boldest: 900;
 
 $font-weights: (
+    light: $fw-light,
     regular: $fw-regular ,
     bold: $fw-bold ,
-    black: $fw-black ,
+    boldest: $fw-boldest ,
 );

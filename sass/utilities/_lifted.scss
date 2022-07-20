@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+@each $size-name,
+$size-value in $sizes {
+    .lifted {
+        &-#{$size-name} {
+            position: relative;
+            bottom: $size-value;
+            z-index: 1;
+        }
+    }
+}

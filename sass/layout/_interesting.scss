@@ -1,0 +1,7 @@
+@use '../abstracts/' as *;
+
+.interesting {
+    background-color: clr(neutral, 200);
+    padding-top: size(32);
+    padding-bottom: size(80);
+}

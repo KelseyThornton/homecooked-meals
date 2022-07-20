@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.card {
+    background-color: clr(neutral, 200);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    @extend %shadow;
+    // border: 1px solid red;
+    margin-block: size(32);
+}

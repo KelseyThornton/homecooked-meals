@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+
+header {
+    background-image: url(../assets/hero-bg.jpg);
+    padding-top: size(32);
+    // padding-bottom: size(80);
+    min-height: 60vh;
+}

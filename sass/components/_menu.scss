@@ -1,0 +1,117 @@
+@use '../abstracts/' as *;
+
+.menu {
+    color: clr(neutral, 100);
+}
+
+/***************************
+- Navigation and hamburger
+***************************/
+
+.flex {
+    display: flex;
+}
+
+.navbar {
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    padding-top: 20px;
+    width: 100%;
+    min-height: 70px;
+}
+
+.nav {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-nav);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__item {
+    margin-left: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.nav__link:hover {
+    transform: scale(1.25, 1.25);
+    transition: transform 250ms ease-in-out;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 500px;
+    background-color: var(--clr-headings);
+}
+
+.nav-btn:hover,
+.nav-btn:focus {
+    opacity: 85%;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle:checked~.nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~.nav .nav__link {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 200ms;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: 0.75;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: #fff;
+    border-radius: 100px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: absolute;
+}
+
+.hamburger {
+    left: 20%;
+    width: 60%;
+    top: 50%;
+}
+
+.hamburger::before,
+.hamburger::after {
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-7px);
+}
+
+.hamburger::after {
+    transform: translateY(7px);
+}
+
+.logo {
+    margin-top: 20px;
+}

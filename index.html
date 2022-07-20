@@ -9,79 +9,211 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Homecooked Meals</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <!-- Styles -->
-  <title>Pricing Table</title>
   <link rel="stylesheet" href="/sass/main.scss">
+
 </head>
 
 <body>
-  <h1 class="clr-primary-400 fs-900 margin-block-32">Hosting Plans</h1>
-  <div class="container">
-    <div class="pricing-plans">
 
-      <div class="tier | padding-36">
-        <h2 class="tier__title | fw-bold clr-primary-400">Free</h2>
-        <ul class="tier__feature-list">
-          <li class="tier__list-item">
-            1 domain
-          </li>
-          <li class="tier__list-item">
-            5gb of bandwidth
-          </li>
-          <li class="tier__list-item">
-            1gb of diskspace
-          </li>
-          <li class="tier__list-item">
-            5,000 monthly uniques
-          </li>
-        </ul>
-        <p class="tier__price | fs-800 fw-bold">$0<span class="fw-regular fs-600">/month</span></p>
-        <button class="button">Get started</button>
+  <script type="module" src="/main.js"></script>
+  <header>
+    <nav>
+      <div class="container">
+        <div class="logo"></div>
+        <div class="menu">
+          <div class="menu-item">About</div>
+          <div class="menu-item">Meals</div>
+          <div class="menu-item">Testimonials</div>
+        </div>
       </div>
-
-      <div class="tier | bg-primary-400 padding-36 clr-neutral-100">
-        <h2 class="tier__title | fw-bold clr-primary-100">Tiny</h2>
-        <ul class="tier__feature-list">
-          <li class="tier__list-item">
-            5 domain
-          </li>
-          <li class="tier__list-item">
-            250gb of bandwidth
-          </li>
-          <li class="tier__list-item">
-            5gb of diskspace
-          </li>
-          <li class="tier__list-item">
-            15,000 monthly uniques
-          </li>
-        </ul>
-        <p class="tier__price | fs-800 fw-bold">$19<span class="fw-regular fs-600">/month</span></p>
-        <button class="button">Get started</button>
-      </div>
-
-      <div class="tier | padding-36">
-        <h2 class="tier__title | fw-bold clr-primary-400">Large</h2>
-        <ul class="tier__feature-list">
-          <li class="tier__list-item">
-            15 domain
-          </li>
-          <li class="tier__list-item">
-            750gb of bandwidth
-          </li>
-          <li class="tier__list-item">
-            20gb of diskspace
-          </li>
-          <li class="tier__list-item">
-            50,000 monthly uniques
-          </li>
-        </ul>
-        <p class="tier__price | fs-800 fw-bold">$49<span class="fw-regular fs-600">/month</span></p>
-        <button class="button">Get started</button>
+    </nav>
+    <div class="hero">
+      <div class="container">
+        <h1 class="clr-neutral-100">
+          Home cooked meals delivered straight to your door
+        </h1>
+        <button class="button order">Place order</button>
+        <button class="button more">More info</button>
       </div>
     </div>
+  </header>
+  <main>
+    <section class="about">
+      <div class="container">
+        <img src="./assets/about.jpg" class="lifted-36">
+        <div>
+          <h2 class="clr-primary-400">This is a nice big heading</h2>
+          <p class="subhead">This is a subhead which mentions some interesting things</p>
+          <p class="subtitle">This introduces the following text</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque pretium
+            nisi
+            a
+            rhoncus posuere.
+          </p>
+          <p>
+            Ut posuere mauris nisl, sed consequat orci ultrices ac. Fusce et elit et nisl eleifend hendrerit. Nulla ac
+            aliquam
+            mauris. Aenean quam lacus, auctor eu lacus vitae, egestas elementum turpis. Morbi sed justo justo.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="interesting">
+      <div class="container">
 
-  </div>
-  <script type="module" src="/main.js"></script>
+        <h2 class="clr-primary-400">This is a nice big heading</h2>
+        <p class="subhead underline">This is a subhead which mentions some interesting things</p>
+        <div class="even-columns">
+          <div class="snippet">
+            <p class="subtitle">This is a subtitle (1)</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+              pretium
+              nisi a
+              rhoncus posuere.
+            </p>
+          </div>
+          <div class="snippet">
+            <p class="subtitle">This is a subtitle (2)</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+              pretium
+              nisi a
+              rhoncus posuere.
+            </p>
+          </div>
+          <div class="snippet">
+            <p class="subtitle">This is a subtitle (3)</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+              pretium
+              nisi a
+              rhoncus posuere.
+            </p>
+          </div>
+          <div class="snippet">
+            <p class="subtitle">This is a subtitle (4)</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+              pretium
+              nisi a
+              rhoncus posuere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="meals">
+      <div class="container" style="--container-width: var(--wide-container)">
+        <h2 class="clr-neutral-100">This is a nice big heading</h2>
+        <p class="subtitle clr-neutral-100 underline padding-block-end-80" style="--underline-colour: white">This is a
+          subtitle which
+          mentions some
+          interesting things</p>
+        <div class="even-columns">
+          <div class="meal">
+            <img src="./assets/meal-01.jpg" class="meal-image"
+              alt="A picture of a meal of a grilled salmon steak on a bed of mashed potatoes and spinach, topped with seasonal vegetables and surrounded by a dark jus.">
+
+            <div class="image-text">
+              <div class="subhead image-title">Grilled salmon</div>
+              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+                egestas
+                dignissim.</p>
+            </div>
+          </div>
+          <div class="meal">
+            <img src="./assets/meal-02.jpg" class="meal-image"
+              alt="A picture of pieces of beef in a tortilla wrap with guacamole and fresh salad, surrounded by wedges of lime.">
+            <div class="image-text">
+              <div class="subhead image-title">Beef tortilla wrap</div>
+              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+                egestas
+                dignissim.</p>
+            </div>
+          </div>
+          <div class="meal">
+            <img src="./assets/meal-03.jpg" class="meal-image"
+              alt="A picture of fresh mussels being tossed in a stainless steel wok.">
+            <div class="image-text">
+              <div class="subhead image-title">Fresh tossed mussels</div>
+              <p class="image-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas
+                egestas
+                dignissim.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="container" style="--container-width: var(--wide-container)">
+        <h2 class="clr-primary-400">What our clients are saying about us</h2>
+        <div class="even-columns">
+          <div class="card">
+            <img src="./assets/testimonial-01-john.jpg">
+            <div class="quote padding-block-72">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+                pretium
+                nisi a rhoncus posuere. Ut posuere mauris nisl, sed consequat orci ultrices ac. Fusce et elit et nisl
+                eleifend hendrerit. Nulla ac aliquam mauris. Aenean quam lacus, auctor eu lacus.
+              </p>
+            </div>
+            <div class="padding-block-16">
+              <p class="name">John Deer</p>
+              <p class="position">Manager at FoodCo.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/testimonial-01-sam.jpg">
+            <div class="quote padding-block-72">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+                pretium
+                nisi a rhoncus posuere. Ut posuere mauris nisl, sed consequat orci ultrices ac. Fusce et elit et nisl
+                eleifend hendrerit. Nulla ac aliquam mauris. Aenean quam lacus, auctor eu lacus.
+              </p>
+            </div>
+            <div class="padding-block-16">
+              <p class="name">Sam Stone</p>
+              <p class="position">Restauranteur</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/testimonial-01-patricia.jpg">
+            <div class="quote padding-block-72">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas egestas dignissim. Quisque
+                pretium
+                nisi a rhoncus posuere. Ut posuere mauris nisl, sed consequat orci ultrices ac. Fusce et elit et nisl
+                eleifend
+                hendrerit. Nulla ac aliquam mauris. Aenean quam lacus, auctor eu lacus.
+              </p>
+            </div>
+            <div class="padding-block-16">
+              <p class="name">Patricia Beck</p>
+              <p class="position">Satisfied Customer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="footer">A good place for some basic footer information</p>
+    <p class="footer">&copy;2022 Personal Chef Services</p>
+    <p class="footer">555 Boulevard Anywhere, Montreal, Quebec, J1S 1S9 | 123-555-1234</p>
+  </footer>
 </body>
 
 </html>

@@ -28,3 +28,15 @@
         @error 'the keyword #{$size} is not in the $breakpoints map';
     }
 }
+
+@mixin interactive-scale ($color, $bgcolor, $scale: 1.1) {
+    scale: 1;
+    transition: scale 350ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        scale: $scale;
+        color: $color;
+        background-color: $bgcolor;
+    }
+}

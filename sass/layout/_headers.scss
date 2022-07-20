@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+
+h1 {
+    font-family: $ff-serif;
+    font-size: fs(900);
+    font-weight: fw(regular);
+    line-height: 1.2;
+    padding-block: size(32);
+}
+
+h2 {
+    font-family: $ff-serif;
+    font-size: fs(800);
+    font-weight: fw(regular);
+    line-height: 1.2;
+    padding-block-start: size(32);
+}
+
+.subhead {
+    font-family: $ff-sans;
+    text-transform: uppercase;
+    font-size: fs(500);
+    line-height: 1.2;
+    position: relative;
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+.subtitle {
+    font-family: $ff-sans;
+    text-transform: uppercase;
+    font-size: fs(400);
+    font-weight: fw(bold);
+    line-height: 1.2;
+    padding-block-start: size(20);
+}

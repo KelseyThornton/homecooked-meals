@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+
+footer {
+    background-color: clr(neutral, 900);
+    color: clr(neutral, 100);
+    line-height: 1.6;
+    padding-block: size(72);
+}

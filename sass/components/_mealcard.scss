@@ -1,0 +1,100 @@
+@use "../abstracts/" as *;
+
+$text-padding: size(16);
+$title-padding: size(16);
+$card-padding: size(32);
+
+.meal {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+
+    // * Select all classes that contain "image" and
+    // * put them on top of each other, aligned at the bottom
+    [class*="image"] {
+        grid-row: 1 / -1;
+        grid-column: 1;
+        align-self: end;
+    }
+
+    .image {
+
+        &-text {
+            padding: $text-padding;
+            background-color: hsla(0, 0%, 0%, 0.6);
+            color: clr(neutral, 200);
+            font-size: size(16);
+            text-align: left;
+        }
+
+        &-title {
+            font-weight: fw(regular);
+            position: relative;
+            width: max-content;
+            margin-inline: 0;
+        }
+
+        &-title::after {
+            content: '';
+            height: 4px;
+            display: block;
+            position: relative;
+            bottom: 1px;
+            // starting position at left of image
+            left: calc($text-padding * -1);
+            // ending position at end of text
+            width: calc(100% + $text-padding);
+            background-color: clr(primary, 500);
+        }
+
+        &-description {
+            font-weight: fw(light);
+        }
+    }
+
+    @include mq (medium) {
+        text-align: left;
+
+        .image-title {
+            padding-top: $title-padding;
+            font-weight: bold;
+        }
+    }
+
+    @media (hover:hover) {
+        .image-text {
+            transform: translateY(calc(100% - ($card-padding + $title-padding + $text-padding)));
+            transition: transform 500ms ease;
+        }
+
+        .image-title {
+            color: clr(neutral, 300);
+
+            &::after {
+                // Hide the element until we hover over the card
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 100ms ease-in;
+                transition-delay: 500ms;
+            }
+        }
+
+        &:hover {
+
+            // Bring the text back up to where it should be
+            .image-text {
+                transform: translateY(0);
+            }
+
+            .image-title {
+                // Make the text brighter
+                color: clr(neutral, 200);
+
+                &::after {
+                    // Hide the element until we hover over the card
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}

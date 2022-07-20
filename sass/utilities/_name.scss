@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.name {
+    color: clr(primary, 500);
+    font-weight: fw(bold);
+}

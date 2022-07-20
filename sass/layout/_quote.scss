@@ -1,0 +1,15 @@
+@use '../abstracts/' as *;
+
+.quote {
+    padding-block: size(80);
+    background-color: clr(neutral, 100);
+    background-image: url(../assets/quote.svg);
+    background-repeat: no-repeat;
+    background-position-x: size(32);
+    background-position-y: size(32);
+
+    p {
+        width: 65%;
+        margin-inline: auto;
+    }
+}

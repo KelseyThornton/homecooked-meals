@@ -23,6 +23,16 @@
     }
 }
 
+@function fw($font-weight) {
+    @if map.has-key($font-weights, $font-weight) {
+        @return map.get($font-weights, $font-weight);
+    }
+
+    @else {
+        @error 'Font-weight #{$font-weight} not defined!';
+    }
+}
+
 @function size($size) {
     @if map.has-key($sizes, $size) {
         @return map.get($sizes, $size);

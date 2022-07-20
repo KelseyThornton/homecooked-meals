@@ -1,0 +1,557 @@
+@use "../abstracts/" as a;
+
+.card {
+    $text-padding: 0.75rem;
+    $title-padding: 1rem;
+    $card-padding: 2rem;
+
+    padding: $card-padding;
+    // centre the cells horizontally in the grids
+    @include a.centre-grid(horiz);
+
+    &-text {
+        max-width: 100%;
+        grid-area: txt;
+    }
+
+    &-header {
+        max-width: 100%;
+        grid-area: hdr;
+    }
+
+    &-image {
+        grid-area: img;
+        // Sticky image
+        position: sticky;
+        // A small box shadow
+        box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+        // rounded corners and hide overflow
+        border-radius: 0.5rem;
+        overflow: hidden;
+        // * not required
+        //Mobile header is smaller
+        // top: a.px2rem(map-get(a.$header-heights, small));
+    }
+
+    &-background {
+        grid-row: 1 / 2;
+        grid-column: 1;
+        padding-bottom: 3rem;
+        background-color: lighten(map-get(a.$colours, dark), 60%)
+    }
+
+    // * Select all classes that begin with "image" and
+    // * put them on top of each other, aligned at the bottom
+    [class^="image"] {
+        grid-row: 1 / 2;
+        grid-column: 1;
+        align-self: end;
+    }
+
+    .image {
+
+        &-text {
+            padding: $text-padding;
+            @include a.theme-gradient(dark);
+        }
+
+        &-title {
+            padding-top: $title-padding;
+            font-weight: bold;
+        }
+
+        &-title::after {
+            content: '';
+            height: 4px;
+            position: absolute;
+            bottom: -3px;
+            // starting position at left of image
+            left: calc($text-padding * -1);
+            // ending position at end of text
+            width: calc(100% + $text-padding);
+            @include a.theme(accent);
+        }
+
+        &-description {
+            padding-top: $text-padding;
+            font-weight: lighter;
+        }
+    }
+
+    .title {
+        width: max-content;
+        position: relative;
+    }
+
+    &-grid {
+        // Grid gap is for all screen layouts
+        column-gap: 2rem;
+        row-gap: 1rem;
+        // Mobile has 1 column
+        grid-template-columns: 1fr;
+        // Mobile areas for text and image
+        grid-template-areas: "hdr""txt""img";
+    }
+
+    @include a.media-up (medium) {
+        // Fully justify text on larger screens
+        text-align: justify;
+
+        &-grid {
+            // Tablet and desktop have 3 columns
+            grid-template-columns: repeat(3, 1fr);
+
+            // With alternating layout of rows
+            &:nth-child(odd) {
+                grid-template-areas: "hdr hdr hdr""txt txt img";
+            }
+
+            &:nth-child(even) {
+                grid-template-areas: "hdr hdr hdr""img txt txt";
+            }
+
+            place-items: start;
+        }
+
+        &-image {
+            // * Set the top of the image to under the header
+            // Desktop header is large
+            // leave a 0.75rem gap
+            top: calc(0.75rem + a.px2rem(map-get(a.$header-heights, large)));
+        }
+
+        .image-title {
+            padding-top: $title-padding;
+            font-weight: bold;
+        }
+
+        @media (hover:hover) {
+            .image-text {
+                transform: translateY(calc(100% - ($card-padding + $title-padding + $text-padding)));
+                transition: transform 500ms ease;
+            }
+
+            .image-title::after {
+                // Hide the element until we hover over the card
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 500ms ease;
+                transition-delay: 500ms;
+            }
+
+            &-image:hover {
+
+                // Bring the text back up to where it should be
+                .image-text {
+                    transform: translateY(0);
+                }
+
+                .image-title::after {
+                    // Hide the element until we hover over the card
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+// * Remove card padding for the 'quotes'
+.nopadding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(28px, 16px + 3.75vw, 64px);
+}
+
+h2 {
+    font-size: clamp(23.3333333333px, 13.3333333333px + 3.125vw, 53.3333333333px);
+}
+
+h3 {
+    font-size: clamp(16.6666666667px, 9.5238095238px + 2.2321428571vw, 38.0952380952px);
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+@media (min-width: 43.75em) {
+    p.last {
+        font-size: 1.75rem;
+    }
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+.external {
+    text-decoration: underline;
+    color: hsl(274deg, 98%, 36%);
+}
+
+.external::after {
+    content: url(../assets/images/external-link-icon.svg);
+}
+
+/* Generic styles */
+body {
+    background-color: hsl(0deg, 0%, 80%);
+    color: hsl(0deg, 0%, 10%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+h1 {
+    color: hsl(274deg, 98%, 36%);
+    text-align: center;
+}
+
+h2 {
+    color: hsl(274deg, 98%, 36%);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 3.75rem;
+    background-color: hsl(0deg, 0%, 10%);
+    color: hsl(0deg, 0%, 80%);
+}
+
+@media (min-width: 43.75em) {
+    header {
+        min-height: 7.5rem;
+    }
+}
+
+.container {
+    max-width: min(100% - 2rem, 70rem);
+    margin-inline: auto;
+}
+
+.container.last {
+    padding-bottom: 5rem;
+}
+
+.left-sidebar {
+    background-color: #4d4d4d;
+}
+
+.right-sidebar {
+    background-color: #999999;
+}
+
+footer {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.25;
+    min-height: 3.75rem;
+    background-color: hsl(0deg, 0%, 10%);
+    color: hsl(0deg, 0%, 80%);
+}
+
+[class*=grid] {
+    display: grid;
+    gap: 1rem;
+}
+
+.centre-grid {
+    justify-self: center;
+    text-align: center;
+}
+
+.grid-even-columns {
+    grid-template-columns: repeat(auto-fit, minmax(min(12.5em, 100%), 1fr));
+}
+
+.areatxt {
+    grid-area: txt;
+}
+
+.areaimg {
+    grid-area: img;
+}
+
+.span2 {
+    grid-column: span 2;
+}
+
+.grid .quote {
+    justify-self: center;
+    align-self: center;
+}
+
+.full-width {
+    grid-area: unset !important;
+    grid-column-start: 1 !important;
+    grid-column-end: -1 !important;
+    width: 100% !important;
+}
+
+.shoutout {
+    box-shadow: 0.25rem 0.25rem 1.5rem rgba(0, 0, 0, 0.3);
+    background-color: #a3a3a3;
+    color: hsl(0deg, 0%, 10%);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    min-height: 10rem;
+}
+
+@media (min-width: 43.75em) {
+    .shoutout {
+        padding: 2rem 5rem;
+    }
+}
+
+.quote {
+    background-image: url("../assets/images/quote.svg");
+    background-repeat: no-repeat;
+    background-position-x: 5%;
+    background-position-y: 20%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.card {
+    padding: 2rem;
+    place-items: start center;
+}
+
+.card-text {
+    max-width: 100%;
+    grid-area: txt;
+}
+
+.card-header {
+    max-width: 100%;
+    grid-area: hdr;
+}
+
+.card-image {
+    grid-area: img;
+    position: sticky;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-background {
+    grid-row: 1/2;
+    grid-column: 1;
+    padding-bottom: 3rem;
+    background-color: #b3b3b3;
+}
+
+.card [class^=image] {
+    grid-row: 1/2;
+    grid-column: 1;
+    align-self: end;
+}
+
+.card .image-text {
+    padding: 0.75rem;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, rgba(26, 26, 26, 0.3) 10%, #1a1a1a 100%);
+    color: hsl(0deg, 0%, 80%);
+}
+
+.card .image-title {
+    padding-top: 1rem;
+    font-weight: bold;
+}
+
+.card .image-title::after {
+    content: "";
+    height: 4px;
+    position: absolute;
+    bottom: -3px;
+    left: -0.75rem;
+    width: calc(100% + 0.75rem);
+    background-color: hsl(274deg, 98%, 36%);
+    color: hsl(0deg, 0%, 80%);
+}
+
+.card .image-description {
+    padding-top: 0.75rem;
+    font-weight: lighter;
+}
+
+.card .title {
+    width: max-content;
+    position: relative;
+}
+
+.card-grid {
+    column-gap: 2rem;
+    row-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "hdr""txt""img";
+}
+
+@media (min-width: 43.75em) {
+    .card {
+        text-align: justify;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        place-items: start;
+    }
+
+    .card-grid:nth-child(odd) {
+        grid-template-areas: "hdr hdr hdr""txt txt img";
+    }
+
+    .card-grid:nth-child(even) {
+        grid-template-areas: "hdr hdr hdr""img txt txt";
+    }
+
+    .card-image {
+        top: calc(0.75rem + 7.5rem);
+    }
+
+    .card .image-title {
+        padding-top: 1rem;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 43.75em) and (hover: hover) {
+    .card .image-text {
+        transform: translateY(calc(100% - 3.75rem));
+        transition: transform 500ms ease;
+    }
+
+    .card .image-title::after {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 500ms ease;
+        transition-delay: 500ms;
+    }
+
+    .card-image:hover .image-text {
+        transform: translateY(0);
+    }
+
+    .card-image:hover .image-title::after {
+        transform: scaleX(1);
+    }
+}
+
+.card img {
+    width: 100%;
+}
+
+.nopadding {
+    padding-top: 0;
+    padding-bottom: 0;
+}

@@ -1,0 +1,6 @@
+@use '../abstracts/' as *;
+
+.meals {
+    background-image: url(../assets/meals-bg.jpg);
+    padding-block: size(32);
+}

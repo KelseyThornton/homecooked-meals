@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.underline::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20%;
+    margin-inline: auto;
+    position: relative;
+    bottom: -1rem;
+    background-color: var(--underline-colour, clr(neutral, 400));
+}
