@@ -9,8 +9,8 @@
     background-color: clr(primary, 500);
     padding: 1em 1.5em;
     margin: size(8);
-
     justify-self: center;
+    transition: color 250ms ease-in-out, background-color 250ms ease-in-out, outline 250ms ease-in-out;
 
     &:hover,
     &:focus {
