@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 $text-padding: size(16);
-$title-padding: size(16);
+$title-padding: 0px;
 $card-padding: size(32);
 
 .meal {
