@@ -9,6 +9,10 @@ $card-padding: size(32);
     grid-template-columns: 1fr;
     overflow: hidden;
 
+    &-image {
+        max-width: 100%;
+    }
+
     // * Select all classes that contain "image" and
     // * put them on top of each other, aligned at the bottom
     [class*="image"] {
@@ -30,12 +34,10 @@ $card-padding: size(32);
         }
 
         &-title {
-            font-weight: fw(regular);
+            font-weight: fw("bold");
             position: relative;
-            width: max-content;
             margin-inline: 0;
             padding-top: $title-padding;
-            font-weight: bold;
         }
 
         &-title::after {

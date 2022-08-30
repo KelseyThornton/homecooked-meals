@@ -8,4 +8,7 @@
     @extend %shadow;
     // border: 1px solid red;
     margin-block: size(32);
+    display: grid;
+    // Line things up instead of using subgrid
+    grid-template-rows: min-content 1fr min-content;
 }
